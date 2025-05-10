@@ -1,0 +1,684 @@
+/* Reset some default styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #141414;
+    background-image: url("combined-v.svg");
+  }
+h1{
+  color: white;
+}
+  body::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, black 100%);
+    pointer-events: none; /* So it doesn't block clicks */
+    z-index: -1; /* Behind everything */
+  }
+  .lines {
+    width: 500px;
+    height: 425px;
+    background-image: url("hero-lines.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+  
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  
+    animation: floatY 4s ease-in-out infinite;
+
+    z-index: 0; /* Place it behind */
+    opacity: 0.8; /* Optional: Make it more subtle */
+
+  }
+  
+  @keyframes floatY {
+    0% { transform: translate(-50%, -50%) translateY(0px); }
+    50% { transform: translate(-50%, -50%) translateY(-20px); }
+    100% { transform: translate(-50%, -50%) translateY(0px); }
+  }
+  
+p{
+  color: rgba(255, 255, 255, 0.719);
+  margin-inline: 10px;
+  max-width: 1000px;
+  position: relative;
+  z-index: 1; /* Bring text above */
+
+}
+
+
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-top: 50px;
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}
+
+
+  /* Main content margins */
+  .main-content {
+    margin: 10px 0; /* Adds spacing between paragraphs */
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+
+  /* Insta logo margin */
+  .insta-margin {
+    margin-left: 6px;
+  }
+
+  /* Navbar styles */
+  .navbar {
+    background: linear-gradient(to bottom, #D5055F, #ed066a);
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensures it stays above other elements */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Adds a shadow for better visibility */
+  }
+
+  
+  .menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .menu-item-right{
+    position:fixed;
+    left: 1090px;
+  }
+
+  .menu-item-right a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+  }
+  
+  .menu-item-right a:hover {
+    background-color: #555;
+    transition: 0.3s ease;
+  }
+
+  .menu-item {
+    position: relative;
+  }
+  
+  .menu-item a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+  }
+  
+  .menu-item a:hover {
+    background-color: #555;
+    transition: 0.3s ease;
+  }
+  
+  /* Dropdown styles */
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgb(68, 68, 68);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dropdown-menu li {
+    border-bottom: 1px solid #555;
+  }
+  
+  .dropdown-menu li a {
+    padding: 10px 15px;
+    color: white;
+    display: block;
+    text-decoration: none;
+  }
+  
+  .dropdown-menu li a:hover {
+    background-color: #555;
+  }
+
+
+
+  .dropdown-menu-right {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgb(68, 68, 68);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dropdown-menu-right li {
+    border-bottom: 1px solid #555;
+  }
+  
+  .dropdown-menu-right li a {
+    padding: 10px 15px;
+    color: white;
+    display: block;
+    text-decoration: none;
+  }
+  
+  .dropdown-menu-right li a:hover {
+    background-color: #555;
+  }
+
+
+
+  /* Show dropdown-right on hover */
+  .menu-item-right.dropdown:hover .dropdown-menu-right {
+    display: block;
+  }
+
+  /* Show dropdown on hover */
+  .menu-item.dropdown:hover .dropdown-menu {
+    display: block;
+  }
+
+  .clan-button{
+      background-color: brown;
+      color : white;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-right: 8px;
+      transition: opacity 0.15s;
+      padding-left: 16px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-right: 16px;
+      vertical-align: middle;
+  }
+
+  .clan-button:hover{
+      opacity: 0.55;
+  }
+
+  .clan-button:active{
+      opacity: 0.2;
+  }
+
+  .phenix-button{
+      
+      /*background-image: url('phenix.jpg') ;
+      background-size: cover; /* Ensures the image covers the button 
+      background-repeat: no-repeat;Prevents tiling */
+      background-color: rgb(255, 77, 0);
+      color : white;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-right: 8px;
+      transition: opacity 0.15s;
+      padding-left: 16px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-right: 16px;
+      vertical-align: middle;
+  }
+
+  .phenix-button:hover{
+      opacity: 0.55;
+  }
+
+  .phenix-button:active{
+      opacity: 0.2;
+  }
+
+  .avalanche-button{
+      background-color: rgb(71, 135, 185);
+      color : white;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-right: 8px;
+      transition: opacity 0.15s;
+      padding-left: 16px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-right: 16px;
+      vertical-align: middle;
+  }
+
+  .avalanche-button:hover{
+      opacity: 0.55;
+  }
+
+  .avalance-button:active{
+      opacity: 0.2;
+  }
+
+
+  .pegase-button{
+      background-color: rgb(0, 29, 193);
+      color : white;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-right: 8px;
+      transition: opacity 0.15s;
+      padding-left: 16px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-right: 16px;
+      vertical-align: middle;
+  }
+
+  .pegase-button:hover{
+      opacity: 0.55;
+  }
+
+  .pegase-button:active{
+      opacity: 0.2;
+  }
+
+  .ouragan-button{
+      background-color: rgb(164, 164, 164);
+      font-weight: bold;
+      color : rgb(0, 0, 0);
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-right: 8px;
+      transition: opacity 0.15s;
+      padding-left: 16px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-right: 16px;
+      vertical-align: middle;
+  }
+
+  .ouragan-button:hover{
+      opacity: 0.55;
+  }
+
+  .ouragan-button:active{
+      opacity: 0.2;
+  }
+
+
+
+  .news{
+      color: brown;
+      font-weight: bolder;
+      margin-top: 20px;
+  }
+
+  .instagram{
+      height: 50px;
+      width: 50px;
+      vertical-align: middle;
+      position: fixed;
+      bottom: 5px;
+      right: 3px;
+  }
+
+  .logo{
+      vertical-align: top;
+      position: fixed;
+      right: 450;
+      top: 8;
+  }
+
+
+  .comment {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(-40deg, #4378bf 18%,#3689ce 48%,#428fd0 59%,#8fb3da 100%);
+}
+.comment-buttons button {
+    margin-left: 5px;
+}
+.comment-header {
+    font-weight: bold;
+    margin-bottom: 8px;
+
+}
+
+.comment-text {
+    margin-left: 10px; /* Optional: Indents the comment text for better readability */
+}
+
+
+
+/*annoucement styles */
+.announcement {
+  border: 1px solid #ccc;
+  padding: 10px;
+  padding-right: 20px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  background: linear-gradient(-40deg, #87b3db 18%, #b0c7ce 48%, #c6d2d8 59%, #d8e2e6 100%);
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.announcement h3 {
+  margin: 0 0 5px;
+  color: #d35400;
+}
+.announcement p {
+  margin: 0 0 10px;
+}
+.announcement small {
+  color: #555;
+  font-style: italic;
+  margin-right: 10px;
+}
+
+
+
+/* action buttons 
+.action-button {
+  background-color: #0073e6;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin: 5px;
+  cursor: pointer;
+}
+/*
+.action-button:hover {
+  background-color: #005bb5;
+}
+
+.action-button:active {
+  background-color: #003f8f;
+}
+*//*
+.edit-button {
+  background-color: #28a745; /* Green for edit 
+}
+
+.edit-button:hover {
+  background-color: #218838;
+}
+
+.edit-button:active {
+  background-color: #1e7e34;
+}
+
+.delete-button {
+  background-color: #dc3545; /* Red for delete 
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+}
+
+.delete-button:active {
+  background-color: #bd2130;
+}*/
+
+
+
+
+
+/* Styling for Edit and Delete buttons */
+.action-button {
+  font-size: 14px;
+  padding: 8px 14px;
+  border-radius: 7px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 3px;
+}
+
+/* Edit button styling */
+.edit-button {
+  background-color: #5bc0de; /* Light blue */
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(91, 192, 222, 0.2);
+}
+
+.edit-button:hover {
+  background-color: #31b0d5;
+  transform: scale(1.05);
+}
+
+.edit-button:active {
+  background-color: #1e8ba7;
+  transform: scale(0.95);
+}
+
+/* Delete button styling */
+.delete-button {
+  background-color: #d9534f; /* Red */
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(217, 83, 72, 0.2);
+}
+
+.delete-button:hover {
+  background-color: #c9302c;
+  transform: scale(1.05);
+}
+
+.delete-button:active {
+  background-color: #ac2925;
+  transform: scale(0.95);
+}
+
+
+/*location button */
+.location{
+  background-color: #31b0d5;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  cursor: pointer;
+  transition: opacity 0.15s, transform 0.15s;
+}
+
+.location:hover {
+  transform: scale(0.98);
+}
+
+
+.location:active {
+  opacity: 0.55;
+}
+
+#slideshow-container {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 360px;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 1s ease-in-out;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsive design for smaller screens */
+@media (max-width: 1024px) {
+  .menu {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .menu-item-right {
+      left: 0;
+  }
+
+  .comment {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .announcement {
+      padding: 15px;
+  }
+
+  .announcement-buttons {
+      margin-top: 10px;
+      align-items: flex-start;
+  }
+
+  .navbar {
+      padding: 8px 15px;
+  }
+
+  .instagram {
+      width: 45px;
+      height: 45px;
+  }
+
+  .logo {
+      right: 20px;
+      top: 5px;
+  }
+
+  .menu-item a {
+      padding: 8px 12px;
+  }
+
+  .clan-button,
+  .phenix-button,
+  .avalanche-button,
+  .pegase-button,
+  .ouragan-button {
+      padding-left: 12px;
+      padding-right: 12px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 768px) {
+  .menu {
+      display: block;
+  }
+
+  .navbar {
+      padding: 6px 10px;
+  }
+
+  .comment {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 10px;
+  }
+
+  .announcement {
+      padding: 10px;
+  }
+
+  .announcement-buttons {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .clan-button,
+  .phenix-button,
+  .avalanche-button,
+  .pegase-button,
+  .ouragan-button {
+      padding-left: 10px;
+      padding-right: 10px;
+  }
+}
+
+/* Very small screens like mobile */
+@media (max-width: 480px) {
+  .menu-item a {
+      padding: 6px 10px;
+  }
+
+  .clan-button,
+  .phenix-button,
+  .avalanche-button,
+  .pegase-button,
+  .ouragan-button {
+      padding-left: 8px;
+      padding-right: 8px;
+      padding-top: 6px;
+      padding-bottom: 6px;
+  }
+
+  .navbar {
+      padding: 5px 10px;
+  }
+
+  .instagram {
+      width: 40px;
+      height: 40px;
+  }
+
+  .logo {
+      right: 10px;
+      top: 5px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
